@@ -1,0 +1,22 @@
+
+<div class="Container">
+
+    <app-title title="{{user.name}}" fontSize="3rem" margin="1.5rem 0 0 2.5rem"></app-title>
+
+
+    <div class="content" *ngIf="orders">
+      <div><strong>Email</strong> {{user.email}}</div>
+      <div><strong>Address</strong> {{user.address}}</div>
+      <ul *ngFor="let order of orders">
+
+        <li>
+          <div><strong>Date</strong> {{order.createdAt | date:'medium'}}</div>
+          <order-items-list [order]="order"></order-items-list>
+          <a routerLink="/track/{{order.id}}">Details</a>s
+        </li>
+      </ul>
+    </div>
+</div>
+
+
+

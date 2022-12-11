@@ -18,7 +18,7 @@ export class CheckoutPageComponent implements OnInit {
   checkoutForm!: FormGroup;
 
   constructor(
-    cartService: CartService,
+    private cartService: CartService,
     private userService: UserService,
     private formBuilder: FormBuilder,
     private toastrService: ToastrService,
@@ -59,6 +59,7 @@ export class CheckoutPageComponent implements OnInit {
     this.orderService.create(this.order).subscribe({
       next:() => {
         this.router.navigateByUrl('/payment-page')
+        this.cartService.clearCart();
       },
       error:(errorRespone) => {
         this.toastrService.error(errorRespone.error, 'Cart')

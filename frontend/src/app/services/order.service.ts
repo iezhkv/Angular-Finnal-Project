@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { ORDER_CREATE_URL, ORDER_NEW_FOR_CURRENT_USER_URL } from '../shared/constants/urls';
+import { ORDER_CREATE_URL, ORDER_GET_FOR_USER, ORDER_NEW_FOR_CURRENT_USER_URL, ORDER_TRACK_URL } from '../shared/constants/urls';
 import { Order } from '../shared/models/Order';
 
 @Injectable({
@@ -11,7 +11,7 @@ export class OrderService {
 
 
   constructor(
-    private http: HttpClient
+    private http: HttpClient,
   ) { }
 
   create(order:Order){
@@ -21,5 +21,12 @@ export class OrderService {
   getNewOrderForCurrentUser():Observable<Order>{
     return this.http.get<Order>(ORDER_NEW_FOR_CURRENT_USER_URL);
   }
+  getOrderForCurrentUser():Observable<Order[]> {
+    return this.http.get<Order[]>(ORDER_GET_FOR_USER);
+  }
+  trackOrderById(id:number): Observable<Order> {
+    return this.http.get<Order>(ORDER_TRACK_URL + id)
+  }
+
 
 }

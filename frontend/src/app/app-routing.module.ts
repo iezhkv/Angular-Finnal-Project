@@ -6,7 +6,9 @@ import { CheckoutPageComponent } from './components/pages/checkout-page/checkout
 import { FoodPageComponent } from './components/pages/food-page/food-page.component';
 import { HomeComponent } from './components/pages/home/home.component';
 import { LoginPageComponent } from './components/pages/login-page/login-page.component';
+import { OrderTrackPageComponent } from './components/pages/order-track-page/order-track-page.component';
 import { PaymentPageComponent } from './components/pages/payment-page/payment-page.component';
+import { ProfilePageComponent } from './components/pages/profile-page/profile-page.component';
 import { RegisterPageComponent } from './components/pages/register-page/register-page.component';
 
 const routes: Routes = [
@@ -19,6 +21,10 @@ const routes: Routes = [
   {path:'register-page', component:RegisterPageComponent},
   {path:'checkout-page', component:CheckoutPageComponent,canActivate:[AuthGuard]},
   {path:'payment-page', component:PaymentPageComponent,canActivate:[AuthGuard]},
+  {path:'profile-page', component:ProfilePageComponent,canActivate:[AuthGuard]},
+  {path:'track/:orderId', component:OrderTrackPageComponent,canActivate:[AuthGuard]},
+
+
 ];
 
 @NgModule({

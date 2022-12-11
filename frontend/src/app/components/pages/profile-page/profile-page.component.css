@@ -1,0 +1,22 @@
+.container{
+  margin-top: 1rem;
+  width: 100vw;
+  margin: 0 0;
+
+}
+
+.content{
+  display: flex;
+  flex-direction: column;
+  max-width: 35rem;
+  margin-right: 1rem;
+}
+
+ul {
+  list-style: none;
+  width: 100vw;
+}
+ li {
+  width: 100%;
+
+ }
