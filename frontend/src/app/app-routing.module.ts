@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AdminGuard } from './auth/guards/admin.guard';
 import { AuthGuard } from './auth/guards/auth.guard';
+import { AdminDashboardComponent } from './components/pages/admin-dashboard/admin-dashboard.component';
 import { CartPageComponent } from './components/pages/cart-page/cart-page.component';
 import { CheckoutPageComponent } from './components/pages/checkout-page/checkout-page.component';
 import { FoodPageComponent } from './components/pages/food-page/food-page.component';
@@ -23,6 +25,8 @@ const routes: Routes = [
   {path:'payment-page', component:PaymentPageComponent,canActivate:[AuthGuard]},
   {path:'profile-page', component:ProfilePageComponent,canActivate:[AuthGuard]},
   {path:'track/:orderId', component:OrderTrackPageComponent,canActivate:[AuthGuard]},
+  {path:'admin', component:AdminDashboardComponent,canActivate:[AdminGuard]},
+
 
 
 ];

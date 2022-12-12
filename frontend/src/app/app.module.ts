@@ -29,6 +29,7 @@ import { AuthInterceptor } from './auth/auth.interceptor';
 import { PaymentPageComponent } from './components/pages/payment-page/payment-page.component';
 import { ProfilePageComponent } from './components/pages/profile-page/profile-page.component';
 import { OrderTrackPageComponent } from './components/pages/order-track-page/order-track-page.component';
+import { AdminDashboardComponent } from './components/pages/admin-dashboard/admin-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import { OrderTrackPageComponent } from './components/pages/order-track-page/ord
     MapComponent,
     PaymentPageComponent,
     ProfilePageComponent,
-    OrderTrackPageComponent
+    OrderTrackPageComponent,
+    AdminDashboardComponent
   ],
   imports: [
     BrowserModule,

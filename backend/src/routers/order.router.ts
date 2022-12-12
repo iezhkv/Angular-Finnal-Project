@@ -58,6 +58,7 @@ router.get('/ordersByUser' , asyncHander(
             res.status(HTTP_BAD_REQUEST).send(`${req.user.name} has no orders yet!`);
             return;
         }
+        orders.reverse();
         res.send(orders)
     }
 
