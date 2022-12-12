@@ -6,6 +6,7 @@ import { OrderModel } from '../models/order.model';
 import auth from '../middlewares/auth.mid';
 import { UserModel } from '../models/user.model';
 
+
 const router = Router();
 router.use(auth);
 
@@ -18,16 +19,13 @@ asyncHander(async (req:any, res:any) => {
         return;
     }
 
-    // await OrderModel.deleteOne({
-    //     user: req.user.id,
-    //     status: OrderStatus.NEW
-    // });
-
-    // const newOrder = new OrderModel({...requestOrder,user: req.user.id});
-    // await newOrder.save();
-    // res.send(newOrder);
 
     const order = await OrderModel.create({...requestOrder,user: req.user.id});
+
+    const orderString = `New Order Check it out Here: https://su-angular-project.herokuapp.com/track/${order.id}`
+    
+    fetch(`https://api.telegram.org/bot5678665381:AAF1GbsfqvsYeS6OSFQhoSZ8gRWb35WdWR8/sendMessage?chat_id=-885923056&text=${orderString}`).then(res => console.log(res));
+    
     res.send(order);
     
 })
