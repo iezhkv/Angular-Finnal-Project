@@ -1,1 +1,16 @@
-<p>admin-dashboard works!</p>
+<div class="content" *ngIf="orders">
+
+    <ul *ngFor="let order of orders">
+
+      <li class="order" routerLink="/track/{{order.id}}" >
+        <div>
+          <div><strong>Order from</strong> {{order.name}}</div>
+          <div><strong>Date</strong> {{order.createdAt | date:'medium'}}</div>
+          <div><strong>Price</strong> {{order.totalPrice | currency}}</div>
+
+
+        </div>
+
+      </li>
+    </ul>
+  </div>

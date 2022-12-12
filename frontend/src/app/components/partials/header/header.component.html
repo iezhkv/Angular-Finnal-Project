@@ -12,7 +12,7 @@
           <a>{{user.name}}</a>
           <div class="menu">
             <a routerLink="/profile-page">Profile</a>
-            <a routerLink="/orders">Orders</a>
+            <a *ngIf="isAdmin" routerLink="/admin">Admin Panel</a>
             <a (click)="logout()">Logout</a>
           </div>
         </li>

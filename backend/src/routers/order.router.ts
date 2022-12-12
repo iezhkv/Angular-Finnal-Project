@@ -71,4 +71,16 @@ router.get('/track/:id', asyncHander(
     }
 ))
 
+router.get('/all', asyncHander(
+    async (req, res) => {
+        const allOrders = await OrderModel.find()
+        if(!allOrders){
+            res.status(HTTP_BAD_REQUEST).send("No orders yet");
+            return;
+        }
+        allOrders.reverse()
+        res.send(allOrders);
+    }
+))
+
 export default router;

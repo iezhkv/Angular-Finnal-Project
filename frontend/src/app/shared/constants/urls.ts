@@ -18,6 +18,7 @@ export const ORDER_CREATE_URL = ORDERS_URL + '/create';
 export const ORDER_NEW_FOR_CURRENT_USER_URL = ORDERS_URL + '/newOrderForCurrentUser';
 export const ORDER_GET_FOR_USER = ORDERS_URL + '/ordersByUser';
 export const ORDER_TRACK_URL = ORDERS_URL + '/track/';
+export const ALL_ORDERS_URL = ORDERS_URL + '/all'
 
 
 
