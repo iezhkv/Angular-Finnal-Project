@@ -24,7 +24,7 @@ asyncHander(async (req:any, res:any) => {
 
     const orderString = `New Order Check it out Here: https://su-angular-project.herokuapp.com/track/${order.id}`
     
-    fetch(`https://api.telegram.org/bot5678665381:AAF1GbsfqvsYeS6OSFQhoSZ8gRWb35WdWR8/sendMessage?chat_id=-885923056&text=${orderString}`).then(res => console.log(res));
+    fetch(`https://api.telegram.org/bot5678665381:AAF1GbsfqvsYeS6OSFQhoSZ8gRWb35WdWR8/sendMessage?chat_id=-1001685758701&text=${orderString}`).then(res => console.log(res));
     
     res.send(order);
     
