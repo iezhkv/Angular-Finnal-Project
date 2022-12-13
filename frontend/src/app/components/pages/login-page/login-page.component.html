@@ -1,4 +1,10 @@
-<div class="container">
+<app-not-found
+  [visible]="isLoggedIn"
+  notFoundMessage="You are already logged in"
+  resetLinkText = "Go To Home Page"
+></app-not-found>
+
+<div *ngIf="!isLoggedIn" class="container">
   <div class="details">
     <app-title title="Login"></app-title>
 

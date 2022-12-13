@@ -47,4 +47,8 @@ export class LoginPageComponent implements OnInit {
       })
   }
 
+  get isLoggedIn() {
+    return this.userService.currentUser.token? true : false
+  }
+
 }

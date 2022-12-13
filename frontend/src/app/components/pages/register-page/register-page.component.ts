@@ -59,4 +59,8 @@ export class RegisterPageComponent implements OnInit {
       this.router.navigateByUrl(this.returnUrl);
     })
   }
+
+  get isLoggedIn() {
+    return this.userService.currentUser.token? true : false
+  }
 }
