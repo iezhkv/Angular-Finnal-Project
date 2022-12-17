@@ -1,0 +1,31 @@
+<div class="container">
+    <app-title title="All Foods" fontSize="1.6rem"></app-title>
+    <div class="content">
+
+
+        <h4>Total Foods: {{foods.length}}</h4>
+
+        <table>
+            <tr *ngFor="let food of foods">
+              <td>
+                <a class="food-img" routerLink="/food/{{food.id}}">
+                    <img [src]="food.imageUrl"/>
+                </a>
+              </td>
+              <td>{{food.name}}</td>
+              <td>{{food.price | currency}}</td>
+              <td>{{food.tags}}</td>
+              <td>{{food.origins}}</td>
+              <td>🕚{{food.cookTime}}</td>
+
+
+
+
+
+
+            </tr>
+
+          </table>
+
+    </div>
+</div>

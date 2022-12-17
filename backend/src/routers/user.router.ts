@@ -77,6 +77,13 @@ router.post('/register', asyncHandler(
       token: token
     };
   }
+
+  router.get('/getAll', asyncHandler(
+    async (req, res) => {
+      const users = await UserModel.find();
+      res.send(users);
+    }
+  ))
   
 
   export default router;

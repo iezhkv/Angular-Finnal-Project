@@ -30,6 +30,8 @@ import { PaymentPageComponent } from './components/pages/payment-page/payment-pa
 import { ProfilePageComponent } from './components/pages/profile-page/profile-page.component';
 import { OrderTrackPageComponent } from './components/pages/order-track-page/order-track-page.component';
 import { AdminDashboardComponent } from './components/pages/admin-dashboard/admin-dashboard.component';
+import { UsersPageComponent } from './components/pages/users-page/users-page.component';
+import { FoodsPageComponent } from './components/pages/foods-page/foods-page.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +57,9 @@ import { AdminDashboardComponent } from './components/pages/admin-dashboard/admi
     PaymentPageComponent,
     ProfilePageComponent,
     OrderTrackPageComponent,
-    AdminDashboardComponent
+    AdminDashboardComponent,
+    UsersPageComponent,
+    FoodsPageComponent
   ],
   imports: [
     BrowserModule,

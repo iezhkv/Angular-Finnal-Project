@@ -1,0 +1,32 @@
+<div class="container">
+    <app-title title="Users" fontSize="1.6rem"></app-title>
+    <div class="content">
+
+
+        <h4>Total Users: {{users.length}}</h4>
+
+        <table>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Address</th>
+              <th>Id</th>
+              <th>Role</th>
+            </tr>
+            <tr *ngFor="let user of users">
+              <td>{{user.name}}</td>
+              <td>{{user.email}}</td>
+              <td>{{user.address}}</td>
+              <td>{{user.id}}</td>
+              <td>
+                <div *ngIf="user.isAdmin">Admin</div>
+                <div *ngIf="!user.isAdmin">User</div>
+
+              </td>
+
+            </tr>
+
+          </table>
+
+    </div>
+</div>

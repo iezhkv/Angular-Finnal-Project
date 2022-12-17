@@ -1,16 +1,30 @@
 <div class="content" *ngIf="orders">
 
-    <ul *ngFor="let order of orders">
-
-      <li class="order" routerLink="/track/{{order.id}}" >
-        <div>
-          <div><strong>Order from</strong> {{order.name}}</div>
-          <div><strong>Date</strong> {{order.createdAt | date:'medium'}}</div>
-          <div><strong>Price</strong> {{order.totalPrice | currency}}</div>
+  <app-title title="All orders" fontSize="1.6rem"></app-title>
 
 
-        </div>
+    <table>
 
-      </li>
-    </ul>
+      <tr>
+        <td>Name</td>
+        <td>Date</td>
+        <td>Price</td>
+        <td>Number of foods</td>
+        <td>Delivery address</td>
+
+      </tr>
+      <tr *ngFor="let order of orders" routerLink="/track/{{order.id}}" >
+        <td>{{order.name}}</td>
+        <td>{{order.createdAt | date }}</td>
+        <td>{{order.totalPrice | currency}}</td>
+        <td>{{order.items.length}} item/s</td>
+        <td>
+        <a href="https://www.google.com/maps/place/{{order.addressLatLng?.lat}},{{order.addressLatLng?.lng}}">Google Maps Address</a>
+        </td>
+
+
+
+
+      </tr>
+    </table>
   </div>
